@@ -9,7 +9,16 @@ const patientResolver={
             }
         }
     },
-    Mutation:{}
+    Mutation:{
+        createPatient: async(_,{idUser, patient},{dataSources,userIdToken})=>{
+            idUserToke=(await dataSources.authAPI.getUser(userIdToken)).idUser
+            if(idUser==idUserToken){
+                return dataSources.patientAPI.createPatient(patient);
+            }else{
+                return null;
+            }
+        }
+    }
 };
 
 module.exports=patientResolver;
