@@ -2,8 +2,8 @@
 
 
 const reportEvolutionTypeDefs = require('./reportEvolution_type_defs');
-const authTypeDefs= require('./authTypeDefs');
-const patientTypeDefs= require('./patientTypeDefs');
+const authTypeDefs= require('./auth_type_defs');
+const patientTypeDefs= require('./patient_type_defs');
 
 
 //Se unen

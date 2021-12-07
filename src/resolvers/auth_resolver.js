@@ -9,7 +9,7 @@ const userResolver = {
     },
 
         Mutation: {
-        signUpUser: (_, {userInput}, { dataSources }) => {        
+        signUpUser: async(_, {userInput}, { dataSources }) => {        
             const authInput = {
                 username: userInput.username,
                 password: userInput.password,

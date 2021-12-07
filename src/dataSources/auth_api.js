@@ -1,4 +1,4 @@
-const { RESTDataSource } = requiere('apollo-datasource-rest') ;
+const { RESTDataSource } = require('apollo-datasource-rest') ;
 
 const serverConfig = require('. . /server') ;
 
@@ -10,7 +10,7 @@ class AuthAPI extends RESTDataSource  {
     }
     async createUser(user)  {
         user = new Object(JSON.parse(JSON.stringify(user)));
-        return await this.post('/user/' , user);
+        return await this.post(`/user/` , user);
     }
 
     async getUser(userid)  {
@@ -22,11 +22,11 @@ class AuthAPI extends RESTDataSource  {
         return await this.post('/login/' , credentials ) ;
     }
 
-     async refreshToken(token){
-         token = new Object(JSON.parse(JSON.stringify({ refresh: token })));
-         return await this.post('/refresh/', token);
-     }
+    async refreshToken(token){
+        token = new Object(JSON.parse(JSON.stringify({ refresh: token })));
+        return await this.post('/refresh/', token);
+    }
 
-     }
+}
     
 module.exports = AuthAPI;
