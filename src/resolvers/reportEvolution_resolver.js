@@ -1,7 +1,7 @@
 const reportEvolutionResolver ={
     Query:{
         reportEvolutionById: async({_, idPatient} , {dataSources, id})=>{
-            idCon =(await dataSources.patient_api.getId(id)).idPatient
+            idCon =(await dataSources.patient_api.getId(id)).id
             if(idPatient == idCon)
              return await dataSources.reportEvolution_api.reportByidPatient(idPatient)
             else
@@ -13,11 +13,11 @@ const reportEvolutionResolver ={
 
 
     Mutation: {
-     createReportEvolution: async({_, idPatient} , {dataSources, id})=>{
-        idCon =(await dataSources.patient_api.getId(id)).idPatient
-        if(reportEvolution.idPatient =idCon)
-        return await dataSources.reportEvolution_api.createReport(reportEvolution);
-        else
+     createReportEvolution: async({_, reportEvolutionInput} , {dataSources, id})=>{
+        idCon =(await dataSources.patient_api.getId(id)).id
+        if(reportEvolutionInput.idPatient == idCon)
+         return await dataSources.reportEvolution_api.createReport(reportEvolution);
+         else
          return null
     }
     }
