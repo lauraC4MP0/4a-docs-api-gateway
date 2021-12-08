@@ -3,9 +3,10 @@ const { RESTDataSource } = require('apollo-datasource-rest');
 const serverConfig = require('../server');
 
 class PatientAPI extends RESTDataSource {
+
     constructor() {
-        super();
-        this.baseURL = serverConfig.patient_api_url;
+       super();
+       this.baseURL = serverConfig.patient_api_url;
     }
 
     async getId(id) {
@@ -17,18 +18,18 @@ class PatientAPI extends RESTDataSource {
     async getLastname(lastname) {
         return await this.get(`/lastname/${lastname}`);
     }
-    async getDateBirth(DateBirth) {
+    async getDateBirth(DateBirth) { 
         return await this.get(`/dateBirth/${dateBirth}`);
-    }
-    async getEmail(Email) {
-        return await this.get(`/email/${email}`);
     }
     async getPhoneNumber(phoneNumber) {
         return await this.get(`/PhoneNumber/${phoneNumber}`);
     }
+    async getEmail(Email) {
+        return await this.get(`/email/${email}`);
+    }
     async getBloodType(bloodType) {
         return await this.get(`/lastname/${bloodType}`);
-    }
+    }         
     async getIs_active(is_active) {
         return await this.get(`/is_active/${is_active}`);
     }

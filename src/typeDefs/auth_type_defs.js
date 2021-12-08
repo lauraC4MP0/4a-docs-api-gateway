@@ -5,11 +5,9 @@ const authTypeDefs = gql `
         refresh: String!
         access: String!
     }
-
     type Access {
         access: String!
     }
-
     input CredentialsInput {
         username: String!
         password: String!
@@ -22,26 +20,21 @@ const authTypeDefs = gql `
         lastname: String!
         email: String!
     }
-
     type UserDetail {
-        id: Int!
+        idUser: Int!
         username: String!
         password: String!
         name: String!
         lastname: String!
         email: String!
     }
-
     type Mutation {
         signUpUser(userInput :SignUpInput): Tokens!
         logIn(credentials: CredentialsInput!): Tokens!
         refreshToken(refresh: String!): Access!
     }
-
     type Query {
-        userDetailById(userId: Int!): UserDetail!
+        userDetailById(idUser: Int!): UserDetail!
     }
-
-    `;
-
+    `
 module.exports = authTypeDefs;
