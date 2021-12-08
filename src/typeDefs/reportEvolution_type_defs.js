@@ -1,29 +1,9 @@
 const { gql } = require('apollo-server');
-const ReportEvolutionTypeDefs = gql `
+const ReportEvolutionTypeDefs = gql`
 type  ReportEvolution {
 date: String!
-idPatient: Long!
-age: Integer!
-weight: String!
-reason_for_consultation: String!
-current_illness: String!
-background: String!
-diseases: String!
-allergies: String!
-hereditary_family_history: String!
-physical_exam: String!
-medicines: String!
-<<<<<<< HEAD
-}
-input ReportEvolutionInput {
-idPatient: Long!
-=======
-
-
-}
-input ReportEvolutionInput {
-idPatient: Long!
-age: Integer!
+idPatient: Int!
+age: Int!
 weight: String!
 reason_for_consultation: String!
 current_illness: String!
@@ -34,10 +14,23 @@ hereditary_family_history: String!
 physical_exam: String!
 medicines: String!
 
->>>>>>> 68908ddc08305f69222d73963327d12c672d3db1
+}
+input ReportEvolutionInput {
+idPatient: Int!
+age: Int!
+weight: String!
+reason_for_consultation: String!
+current_illness: String!
+background: String!
+diseases: String!
+allergies: String!
+hereditary_family_history: String!
+physical_exam: String!
+medicines: String!
+
 }
 extend type Query {
-reportEvolutionById(id: Long!): [ReportEvolution]
+reportEvolutionById(id: Int!): [ReportEvolution]
 }
 extend type Mutation {
 createReportEvolution(reportEvolution: ReportEvolutionInput!): ReportEvolution

@@ -2,24 +2,31 @@ const { gql } = require('apollo-server');
 
 const patientTypeDefs = gql `
     input SignUpInput {
-        id: Int!
+        id:Int!
         name: String!
         lastname: String!
-        dateBirth: Date!
+        dateBirth:String!
         phoneNumber: Int!
         email: String!
         bloodType: String!
+        is_active: Boolean!
     }
-    type UserDetail {
+    type Patient {   
         id: Int!
         name: String!
         lastname: String!
-        dateBirth: Date!
+        dateBirth: String!
+        phoneNumber: Int!
+        email: String!
         bloodType: String!
+        is_active: Boolean!
         }
-    type Mutation {
+    extend type Mutation {
         signUpPatient(patientInput :SignUpInput): Patient
         }
-    `;
+    extend type Query{
+        patientById(idUser: Int):Patient
+    }
+    `
 
 module.exports = patientTypeDefs;

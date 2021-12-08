@@ -21,7 +21,7 @@ const authTypeDefs = gql `
         email: String!
     }
     type UserDetail {
-        id: Int!
+        idUser: Int!
         username: String!
         password: String!
         name: String!
@@ -34,8 +34,7 @@ const authTypeDefs = gql `
         refreshToken(refresh: String!): Access!
     }
     type Query {
-        userDetailById(userId: Int!): UserDetail!
+        userDetailById(idUser: Int!): UserDetail!
     }
-    `;
-
+    `
 module.exports = authTypeDefs;
