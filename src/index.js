@@ -10,7 +10,7 @@ const server=new ApolloServer({
     typeDefs, resolvers,
     dataSources:()=>({
         PatientAPI:new PatientAPI(),
-        AuthAPI:new AuthAPI(),
+        authAPI:new AuthAPI(),
         reportEvolutionAPI:new reportEvolutionAPI(),
     }),
     introspection:true,
