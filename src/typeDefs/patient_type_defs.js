@@ -11,7 +11,7 @@ const patientTypeDefs = gql `
         bloodType: String!
     }
 
-    type Patient {   
+    type PatientDetail {   
         id: Int!
         name: String!
         lastname: String!
@@ -19,14 +19,15 @@ const patientTypeDefs = gql `
         phoneNumber: Int!
         email: String!
         bloodType: String!
+        is_active: Boolean!
         }
 
     extend type Mutation {
-        createPatient(patientInput :SignUpInputPatient): Patient
+        signUpPatient(patientInput :SignUpInputPatient): PatientDetail
         }
 
     extend type Query{
-        patientById(idUser: Int):Patient
+        patientById(id: Int):PatientDetail
     }
     `
 

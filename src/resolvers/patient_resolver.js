@@ -1,16 +1,23 @@
 const patientResolver={
     Query:{
-        patientById: async(_,{idUser},{dataSources,userIdToken})=>{
-            if(idUser==userIdToken){
-                return await dataSources.patientAPI.patientById(idPatient);
-            }else{
-                return null;
-            }
+        patientById: (_,{patientId},{dataSources})=>{
+            console.log(dataSources.PatientAPI.patientById(patientId));
+            return dataSources.PatientAPI.patientById(patientId);
         }
     },
-    Mutation:{
-        createPatient: async(_,{patientInput},{dataSources})=>{
-            return dataSources.patientAPI.signUpPatient(patientInput);
+        Mutation:{
+        signUpPatient: async(_,{patientInput},{dataSources})=>{
+            const patient= {
+                id:patientInput.id,
+                name: patientInput.name,
+                lastname:patientInput.lastname,
+                dateBirth:patientInput.dateBirth,
+                phoneNumber: patientInput.phoneNumber,
+                email: patientInput.email,
+                bloodType: patientInput.bloodType
+            }
+            console.log(patient);
+            return await dataSources.PatientAPI.createPatient(patient);
         }
     }
 };
