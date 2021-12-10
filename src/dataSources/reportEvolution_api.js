@@ -5,7 +5,7 @@ class ReportEvolutionAPI extends RESTDataSource {
 
     constructor() {
         super();
-        this.baseURL = serverConfig.ReportEvolution_api_url;
+        this.baseURL = serverConfig.medic_api_url;
         
     }
 

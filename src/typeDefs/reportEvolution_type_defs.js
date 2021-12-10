@@ -5,27 +5,26 @@ date: String!
 idPatient: Int!
 age: Int!
 weight: String!
-reason_for_consultation: String!
-current_illness: String!
+reasonForConsultation: String!
+currentIllness: String!
 background: String!
 diseases: String!
 allergies: String!
-hereditary_family_history: String!
-physical_exam: String!
+hereditaryFamilyHistory: String!
+physicalExam: String!
 medicines: String!
 
 }
 input ReportEvolutionInput {
 idPatient: Int!
-age: Int!
 weight: String!
-reason_for_consultation: String!
-current_illness: String!
+reasonForConsultation: String!
+currentIllness: String!
 background: String!
 diseases: String!
 allergies: String!
-hereditary_family_history: String!
-physical_exam: String!
+hereditaryFamilyHistory: String!
+physicalExam: String!
 medicines: String!
 
 }
