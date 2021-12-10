@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server');
 
 const patientTypeDefs = gql `
-    input SignUpInput {
+    input SignUpInputPatient {
         id:Int!
         name: String!
         lastname: String!
@@ -9,8 +9,8 @@ const patientTypeDefs = gql `
         phoneNumber: Int!
         email: String!
         bloodType: String!
-        is_active: Boolean!
     }
+
     type Patient {   
         id: Int!
         name: String!
@@ -19,11 +19,12 @@ const patientTypeDefs = gql `
         phoneNumber: Int!
         email: String!
         bloodType: String!
-        is_active: Boolean!
         }
+
     extend type Mutation {
-        signUpPatient(patientInput :SignUpInput): Patient
+        createPatient(patientInput :SignUpInputPatient): Patient
         }
+
     extend type Query{
         patientById(idUser: Int):Patient
     }

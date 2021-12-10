@@ -9,7 +9,7 @@ const patientResolver={
         }
     },
     Mutation:{
-        signUpPatient: async(_,{patientInput},{dataSources})=>{
+        createPatient: async(_,{patientInput},{dataSources})=>{
             return dataSources.patientAPI.signUpPatient(patientInput);
         }
     }

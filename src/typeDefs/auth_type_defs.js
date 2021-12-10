@@ -14,6 +14,7 @@ const authTypeDefs = gql `
     }
  
     input SignUpInput {
+        id: Int!
         username: String!
         password: String!
         name: String!
@@ -21,7 +22,7 @@ const authTypeDefs = gql `
         email: String!
     }
     type UserDetail {
-        idUser: Int!
+        id: Int!
         username: String!
         password: String!
         name: String!
@@ -29,7 +30,7 @@ const authTypeDefs = gql `
         email: String!
     }
     type Mutation {
-        signUpUser(userInput :SignUpInput): Tokens!
+        signUpUser(userInput :SignUpInput): UserDetail
         logIn(credentials: CredentialsInput!): Tokens!
         refreshToken(refresh: String!): Access!
     }

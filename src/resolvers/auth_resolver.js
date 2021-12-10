@@ -1,7 +1,7 @@
 const userResolver = {
     Query: {
-        userDetailById: async(_, {userId}, { dataSources, userIdToken }) => {
-            if (userId == userIdToken)
+        userDetailById: async(_, {id}, { dataSources, userIdToken }) => {
+            if (id == userIdToken)
                 return await dataSources.authAPI.getUser(userId)
             else
                 return null
@@ -11,6 +11,7 @@ const userResolver = {
         Mutation: {
         signUpUser:async (_, {userInput}, { dataSources }) => {        
             const authInput = {
+                id      : userInput.id,
                 username: userInput.username,
                 password: userInput.password,
                 name    : userInput.name,
