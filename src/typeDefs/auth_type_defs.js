@@ -35,7 +35,7 @@ const authTypeDefs = gql `
         refreshToken(refresh: String!): Access!
     }
     type Query {
-        userDetailById(idUser: Int!): UserDetail!
+        userById(idUser: Int):UserDetail
     }
     `
 module.exports = authTypeDefs;

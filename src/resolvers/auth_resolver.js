@@ -1,8 +1,8 @@
 const userResolver = {
     Query: {
-        userDetailById: async(_, {id}, { dataSources, userIdToken }) => {
-            if (id == userIdToken)
-                return await dataSources.authAPI.getUser(userId)
+        userById: async(_, {idUser}, { dataSources, userIdToken }) => {
+            if (idUser == userIdToken)
+                return await dataSources.authAPI.getUser(idUser)
             else
                 return null
         },
