@@ -1,8 +1,8 @@
 const patientResolver={
     Query:{
-        patientById: (_,{patientId},{dataSources})=>{
-            console.log(dataSources.PatientAPI.patientById(patientId));
-            return dataSources.PatientAPI.patientById(patientId);
+        patientById: (_,{id},{dataSources})=>{
+            console.log(dataSources.PatientAPI.patientById(id));
+            return dataSources.PatientAPI.patientById(id);
         }
     },
         Mutation:{
