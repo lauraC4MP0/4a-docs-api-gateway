@@ -12,8 +12,8 @@ class PatientAPI extends RESTDataSource{
         return await this.post(`/patients/`, patient);
     }
 
-    async patientById(patientId){
-        return await this.get(`/patients/${patientId}`);
+    async patientById(id){
+        return await this.get(`/patients/${id}`);
     }
 
 }
