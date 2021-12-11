@@ -10,7 +10,7 @@ class ReportEvolutionAPI extends RESTDataSource {
     }
 
     async createReport(reportEvolution){
-        report = new Object(JSON.parse(JSON.stringify(reportEvolution)));
+        reportEvolution = new Object(JSON.parse(JSON.stringify(reportEvolution)));
         return await this.post(`/reportEvolution`, reportEvolution);
     }
 
