@@ -6,7 +6,7 @@ const authentication = async ({ req }) => {
     if (token == '')
         return { userIdToken: null }
     else {
-        //try {
+        try {
             let requestOptions = {
                 method: 'POST', headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ token }), redirect: 'follow'
@@ -19,10 +19,10 @@ const authentication = async ({ req }) => {
                 throw new ApolloError(`SESION INACTIVA - ${401}` + response.status, 401)
             }
             return { userIdToken: (await response.json()).UserId };
-        //}
-        /*catch (error) {
+        }
+        catch (error) {
             throw new ApolloError(`TOKEN ERROR: ${500}: ${error}`, 500);
-        }*/
+        }
     }
 }
 module.exports = authentication;

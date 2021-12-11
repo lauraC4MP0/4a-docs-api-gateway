@@ -24,6 +24,8 @@ const patientTypeDefs = gql `
 
     extend type Mutation {
         signUpPatient(patientInput :SignUpInputPatient): PatientDetail
+        deletePatient(id: Int):String!
+        updatePatient(patientInput: SignUpInputPatient):PatientDetail
         }
 
     extend type Query{

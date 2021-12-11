@@ -16,6 +16,15 @@ class PatientAPI extends RESTDataSource{
         return await this.get(`/patients/${id}`);
     }
 
+    async deletePatient(id){
+        return await this.put(`/patients/delete/${id}`);
+    }
+
+    async updatePatient(patient){
+        patient=new Object(JSON.parse(JSON.stringify(patient)));
+        return await this.put(`/patients/update/${patient.id}`,patient);
+    }
+
 }
 
 module.exports=PatientAPI;
