@@ -7,17 +7,10 @@ const patientResolver={
     },
         Mutation:{
         signUpPatient: async(_,{patientInput},{dataSources})=>{
-            const patient= {
-                id:patientInput.id,
-                name: patientInput.name,
-                lastname:patientInput.lastname,
-                dateBirth:patientInput.dateBirth,
-                phoneNumber: patientInput.phoneNumber,
-                email: patientInput.email,
-                bloodType: patientInput.bloodType
-            }
-            console.log(patient);
-            return await dataSources.PatientAPI.createPatient(patient);
+            
+            
+            console.log(patientInput);
+            return await dataSources.PatientAPI.createPatient(patientInput);
         },
         deletePatient:(_,{id},{dataSources})=>{
             return dataSources.PatientAPI.deletePatient(id);

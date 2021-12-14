@@ -10,15 +10,8 @@ const userResolver = {
 
         Mutation: {
         signUpUser:async (_, {userInput}, { dataSources }) => {        
-            const authInput = {
-                id      : userInput.id,
-                username: userInput.username,
-                password: userInput.password,
-                name    : userInput.name,
-                lastname: userInput.lastname,
-                email   : userInput.email,
-                }
-                return await dataSources.authAPI.createUser(authInput);
+            console.log(userInput);
+                return await dataSources.authAPI.createUser(userInput);
         },
 
         logIn: async (_, { credentials }, { dataSources } ) => {

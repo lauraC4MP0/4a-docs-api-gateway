@@ -7,9 +7,9 @@ class PatientAPI extends RESTDataSource{
         this.baseURL=serverConfig.medic_api_url;
     }
 
-    async createPatient(patient){
-        patient=new Object(JSON.parse(JSON.stringify(patient)));
-        return await this.post(`/patients/`, patient);
+    async createPatient(patientInput){
+        patientInput=new Object(JSON.parse(JSON.stringify(patientInput)));
+        return await this.post(`/patients/`, patientInput);
     }
 
     async patientById(id){
