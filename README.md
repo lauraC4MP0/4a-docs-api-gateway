@@ -1,5 +1,5 @@
 # ConsulMedic API Gateway
-_Repositorio correspondiente a la documentación del APi Gateway encargado de recibir y repsonder las solicitudes del componente Web y con los microservicios que proveen las funcionalidades._
+_Repositorio correspondiente a la documentación del API Gateway encargado de recibir y repsonder las solicitudes del componente Web y con los microservicios que proveen las funcionalidades._
 Microservicios:
 * [auth_ms](https://github.com/lauraC4MP0/4a-docs-auth-ms)
 * [medic_ms](https://github.com/lauraC4MP0/4a-docs-medic-ms)
@@ -22,5 +22,7 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * **July Barragán** - [julybarragan](https://github.com/julybarragan)
 * **Laura Campo** - [lauraC4MP0](https://github.com/lauraC4MP0/)
 ## Licencia 📄
+
 Este proyecto está bajo la Licencia MIT LICENSE - mira el archivo [LICENSE](./LICENSE) para detalles
+
 ---
