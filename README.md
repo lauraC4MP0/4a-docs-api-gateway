@@ -12,7 +12,7 @@ node src/index.js
 ```
 
 ## Construido con 🛠️
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_Herramientas utilizadas en el proyecto_
 * [GraphQL](https://graphql.org/) - Entorno de ejecución
 * [Apollo](https://www.apollographql.com/docs/apollo-server/) - servidor
 ## Autores ✒️
